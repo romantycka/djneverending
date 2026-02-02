@@ -110,6 +110,31 @@
         .animate-aura {
             animation: float 7s infinite ease-in-out;
         }
+
+        /* Fluid Typography - plynulé škálování textu */
+        .fluid-hero-title {
+            font-size: clamp(2rem, 8vw, 8rem);
+        }
+
+        .fluid-hero-subtitle {
+            font-size: clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .fluid-hero-small {
+            font-size: clamp(1rem, 3vw, 3.5rem);
+        }
+
+        .fluid-text {
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+        }
+
+        .fluid-section-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .fluid-pt-header {
+            padding-top: clamp(6rem, 12vw, 8rem);
+        }
     </style>
 </head>
 
@@ -181,7 +206,8 @@
     </nav>
 
     <!-- HERO SEKCE (Menší) -->
-    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center pt-20 overflow-hidden bg-black">
+    <section
+        class="relative h-[60vh] min-h-[400px] flex items-center justify-center fluid-pt-header overflow-hidden bg-black">
 
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/70 z-0"></div>
@@ -191,9 +217,8 @@
             <div class="relative inline-block">
                 <div class="aura-glow animate-aura w-[115%] h-[115%] opacity-50"></div>
                 <h1
-                    class="relative z-10 mb-4 sm:mb-6 font-display font-black tracking-wide leading-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
-                    <span
-                        class="text-blue-gradient block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 tracking-wider leading-tight pb-2"><span
+                    class="relative z-10 mb-4 sm:mb-6 font-display font-black tracking-wide leading-tight text-white fluid-hero-subtitle">
+                    <span class="text-blue-gradient block fluid-hero-title mb-4 tracking-wider leading-tight pb-2"><span
                             class="block sm:inline">Více než jen</span> <span class="block sm:inline">pouštěč
                             hudby</span></span>
                 </h1>

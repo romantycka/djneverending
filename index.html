@@ -110,6 +110,32 @@
         .animate-aura {
             animation: float 7s infinite ease-in-out;
         }
+
+        /* Fluid Typography - plynulé škálování textu */
+        .fluid-hero-title {
+            font-size: clamp(2rem, 8vw, 8rem);
+        }
+
+        .fluid-hero-subtitle {
+            font-size: clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .fluid-hero-small {
+            font-size: clamp(1rem, 3vw, 3.5rem);
+        }
+
+        .fluid-text {
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+        }
+
+        .fluid-section-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+        }
+
+        /* Fluid padding pro header offset */
+        .fluid-pt-header {
+            padding-top: clamp(6rem, 12vw, 8rem);
+        }
     </style>
 </head>
 
@@ -181,7 +207,7 @@
 
     <!-- Fixed Hero Background -->
     <section
-        class="fixed top-0 left-0 right-0 z-0 min-h-[70vh] sm:h-screen flex items-center justify-center pt-20 overflow-hidden">
+        class="fixed top-0 left-0 right-0 z-0 min-h-[70vh] sm:h-screen flex items-center justify-center fluid-pt-header overflow-hidden">
         <!-- Fallback Image (shows before video loads or if video disabled) -->
         <img src="img/hero-bg.jpg" alt="Hero pozadí" class="absolute inset-0 w-full h-full object-cover z-0">
 
@@ -200,12 +226,12 @@
             <div class="relative inline-block">
                 <div class="aura-glow animate-aura w-[115%] h-[115%] opacity-80 z-[2]"></div>
                 <h1
-                    class="relative z-10 mb-4 sm:mb-8 font-display font-black tracking-wide leading-tight text-white uppercase text-3xl sm:text-5xl md:text-7xl lg:text-8xl">
+                    class="relative z-10 mb-4 sm:mb-8 font-display font-black tracking-wide leading-tight text-white uppercase fluid-hero-subtitle">
                     <span
-                        class="text-blue-gradient block text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-4 sm:mb-8 tracking-wider sm:tracking-widest leading-none">DJ
+                        class="text-blue-gradient block fluid-hero-title mb-4 sm:mb-8 tracking-wider sm:tracking-widest leading-none">DJ
                         NEVERENDING</span>
                     Pravý zvuk <br>
-                    <span class="text-gray-400 text-xl sm:text-3xl md:text-5xl lg:text-6xl block mt-2 sm:mt-4">80. a 90.
+                    <span class="text-gray-400 fluid-hero-small block mt-2 sm:mt-4">80. a 90.
                         let</span>
                 </h1>
             </div>

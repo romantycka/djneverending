@@ -111,6 +111,31 @@
             animation: float 7s infinite ease-in-out;
         }
 
+        /* Fluid Typography - plynulé škálování textu */
+        .fluid-hero-title {
+            font-size: clamp(2rem, 8vw, 8rem);
+        }
+
+        .fluid-hero-subtitle {
+            font-size: clamp(1.5rem, 5vw, 5rem);
+        }
+
+        .fluid-hero-small {
+            font-size: clamp(1rem, 3vw, 3.5rem);
+        }
+
+        .fluid-text {
+            font-size: clamp(0.875rem, 1.5vw, 1.25rem);
+        }
+
+        .fluid-section-title {
+            font-size: clamp(1.5rem, 4vw, 3rem);
+        }
+
+        .fluid-pt-header {
+            padding-top: clamp(6rem, 12vw, 8rem);
+        }
+
         /* CSS pro bílý kalendář v input date */
         .dark-calendar::-webkit-calendar-picker-indicator {
             filter: invert(1);
@@ -207,7 +232,7 @@
     </script>
 
     <!-- MAIN CONTENT -->
-    <section class="relative min-h-screen flex items-center pt-24 pb-12 overflow-hidden">
+    <section class="relative min-h-screen flex items-center fluid-pt-header pb-12 overflow-hidden">
 
         <div class="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
             <div class="aura-glow animate-aura w-[1000px] h-[1000px] -top-[300px] -left-[300px] opacity-60"></div>
@@ -217,7 +242,7 @@
         <div class="max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10 w-full">
 
             <div class="text-center mb-12 sm:mb-16">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-display font-black tracking-wide text-white mb-4">
+                <h1 class="fluid-hero-subtitle font-display font-black tracking-wide text-white mb-4">
                     Začněme <span class="text-blue-gradient">plánovat</span>
                 </h1>
                 <p class="text-gray-400 text-lg sm:text-xl max-w-2xl mx-auto">
