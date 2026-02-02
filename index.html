@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="cs" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DJ Neverending | Pravý zvuk 80. a 90. let</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    letterSpacing: {
+                        'mega': '0.1em',
+                    },
+                    colors: {
+                        page: '#000000',
+                        card: '#131314',
+                        'google-blue': '#4285F4',
+                        'google-light': '#8AB4F8',
+                    },
+                    backgroundImage: {
+                        'ai-gradient': 'linear-gradient(90deg, #4285F4 0%, #8AB4F8 100%)',
+                    },
+                    animation: {
+                        'blob': 'float 7s ease-in-out infinite',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        .text-blue-gradient {
+            background: linear-gradient(90deg, #4285F4, #8AB4F8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .aura-glow {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(66, 133, 244, 0.6) 0%, rgba(66, 133, 244, 0.15) 50%, rgba(0, 0, 0, 0) 75%);
+            filter: blur(60px);
+            z-index: 0;
+            pointer-events: none;
+            mix-blend-mode: screen;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+
+            33% {
+                transform: translate(-50%, -55%) scale(1.15);
+            }
+
+            66% {
+                transform: translate(-50%, -45%) scale(0.95);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) scale(1);
+            }
+        }
+
+        .animate-aura {
+            animation: float 7s infinite ease-in-out;
+        }
+    </style>
+</head>
+
+<body class="antialiased selection:bg-google-blue selection:text-white relative">
+
+    <nav class="fixed w-full z-50 top-0 start-0 bg-black/90 backdrop-blur-md border-b border-white/5">
+        <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-6 px-4">
+
+            <a href="#" class="flex items-center group">
+                <img src="img/logo_header.jpg" alt="DJ Neverending"
+                    class="h-12 sm:h-16 md:h-20 lg:h-24 group-hover:scale-105 transition">
+            </a>
+
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-btn" class="md:hidden p-2 text-white hover:text-google-light transition"
+                aria-label="Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16">
+                    </path>
+                </svg>
+            </button>
+
+            <div class="hidden w-full md:block md:w-auto">
+                <ul
+                    class="font-medium flex flex-col p-4 md:p-0 mt-4 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0">
+                    <li><a href="index.html"
+                            class="block py-2 px-3 text-white hover:text-white transition tracking-wide text-sm uppercase font-bold">Domů</a>
+                    </li>
+                    <li><a href="omne.html"
+                            class="block py-2 px-3 text-gray-400 hover:text-white transition tracking-wide text-sm uppercase font-bold">O
+                            mně</a></li>
+                    <li><a href="sluzby.html"
+                            class="block py-2 px-3 text-gray-400 hover:text-white transition tracking-wide text-sm uppercase font-bold">Služby</a>
+                    </li>
+                    <li><a href="#reference"
+                            class="block py-2 px-3 text-gray-400 hover:text-white transition tracking-wide text-sm uppercase font-bold">Reference</a>
+                    </li>
+                </ul>
+            </div>
+
+            <a href="#kontakt"
+                class="hidden md:inline-block bg-white text-black hover:bg-google-light hover:text-white font-black rounded-full text-sm px-6 py-2.5 text-center transition tracking-wide transform hover:scale-105 shadow-lg">
+                Kontakt
+            </a>
+        </div>
+
+        <!-- Mobile menu dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden w-full bg-black/95 border-t border-white/10">
+            <ul class="flex flex-col p-4 space-y-2">
+                <li><a href="index.html"
+                        class="block py-3 px-4 text-white hover:text-white hover:bg-white/5 rounded-lg transition text-sm uppercase font-bold tracking-wide">Domů</a>
+                </li>
+                <li><a href="omne.html"
+                        class="block py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition text-sm uppercase font-bold tracking-wide">O
+                        mně</a></li>
+                <li><a href="sluzby.html"
+                        class="block py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition text-sm uppercase font-bold tracking-wide">Služby</a>
+                </li>
+                <li><a href="#reference"
+                        class="block py-3 px-4 text-gray-300 hover:text-white hover:bg-white/5 rounded-lg transition text-sm uppercase font-bold tracking-wide">Reference</a>
+                </li>
+                <li><a href="#kontakt"
+                        class="block py-3 px-4 mt-2 bg-ai-gradient text-white text-center rounded-full font-bold text-sm uppercase tracking-wide">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section
+        class="sticky top-0 min-h-[70vh] sm:h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        <!-- Fallback Image (shows before video loads or if video disabled) -->
+        <img src="img/hero-bg.jpg" alt="Hero pozadí" class="absolute inset-0 w-full h-full object-cover z-0">
+
+        <!-- Video Background -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-[1]">
+            <source src="img/hero_video.mp4" type="video/mp4">
+        </video>
+
+        <!-- Dark Overlay 15% -->
+        <div class="absolute inset-0 bg-black/[0.15] z-[2] pointer-events-none"></div>
+
+        <!-- Content Wrapper - starts hidden/up, slides down -->
+        <div id="hero-content"
+            class="relative z-10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 opacity-0 -translate-y-20 transition-all duration-[1500ms] ease-out">
+
+            <div class="relative inline-block">
+                <div class="aura-glow animate-aura w-[115%] h-[115%] opacity-80 z-[2]"></div>
+                <h1
+                    class="relative z-10 mb-4 sm:mb-8 font-display font-black tracking-wide leading-tight text-white uppercase text-3xl sm:text-5xl md:text-7xl lg:text-8xl">
+                    <span
+                        class="text-blue-gradient block text-4xl sm:text-6xl md:text-8xl lg:text-9xl mb-4 sm:mb-8 tracking-wider sm:tracking-widest leading-none">DJ
+                        NEVERENDING</span>
+                    Pravý zvuk <br>
+                    <span class="text-gray-400 text-xl sm:text-3xl md:text-5xl lg:text-6xl block mt-2 sm:mt-4">80. a 90.
+                        let</span>
+                </h1>
+            </div>
+
+            <p
+                class="mb-6 sm:mb-10 text-base sm:text-lg font-normal text-gray-300 lg:text-xl px-2 sm:px-16 xl:px-48 max-w-4xl mx-auto leading-relaxed relative z-10">
+                Autentický vinyl, charisma zkušeného MC a produkce na klíč.
+                Vraťte se v čase s elegancí a stylem, který digitál nenahradí.
+            </p>
+
+            <div
+                class="flex flex-col mb-4 sm:mb-8 lg:mb-16 space-y-3 sm:space-y-0 sm:flex-row sm:justify-center sm:items-center sm:space-x-4 md:space-x-6 relative z-10 px-4 sm:px-0">
+                <a href="#kontakt"
+                    class="inline-flex justify-center items-center py-4 px-10 min-w-[180px] text-sm sm:text-base font-bold text-center text-white rounded-full bg-ai-gradient hover:shadow-[0_0_30px_rgba(66,133,244,0.6)] transition transform hover:-translate-y-1 tracking-wider uppercase">
+                    Napište mi
+                </a>
+                <a href="#omne"
+                    class="inline-flex justify-center items-center py-4 px-10 min-w-[180px] text-sm sm:text-base font-bold text-center text-white rounded-full border border-white/20 hover:bg-white/10 transition tracking-wider uppercase">
+                    Zjistit více
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hero animation after 2 seconds
+            setTimeout(() => {
+                const content = document.getElementById('hero-content');
+
+                // Slide down content
+                content.classList.remove('opacity-0', '-translate-y-20');
+            }, 2000);
+
+            // Mobile menu toggle
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+
+                // Close menu when clicking on a link
+                mobileMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                    });
+                });
+            }
+        });
+    </script>
+
+    <div class="relative z-20 bg-page">
+        <section id="omne" class="py-12 sm:py-16 md:py-24 relative scroll-mt-20">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
+                    <div>
+                        <h2
+                            class="text-2xl sm:text-3xl md:text-4xl lg:text-6xl font-display font-black tracking-wide mb-4 sm:mb-6 text-white">
+                            Hudební alchymie <br>
+                            <span class="text-gray-500">podložená praxí</span>
+                        </h2>
+                        <p class="text-gray-400 text-sm sm:text-base md:text-lg mb-6 leading-relaxed">
+                            Hudbu nejen pouštím – vyprávím příběhy doby. Mým cílem není jen hrát, ale vidět rozzářené
+                            tváře
+                            a energii, která přetrvá.
+                            Jsem 100% Vinyl DJ, žádné digitální playlisty bez duše.
+                        </p>
+                    </div>
+
+                    <div class="relative grid grid-cols-2 gap-4">
+                        <div class="aura-glow animate-aura w-[160%] h-[160%]"></div>
+
+                        <div
+                            class="bg-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-google-blue/50 relative z-10">
+                            <span
+                                class="block text-3xl sm:text-4xl md:text-5xl font-display font-black text-blue-gradient mb-1 sm:mb-2">35+</span>
+                            <span class="text-white font-bold tracking-wide uppercase text-xs sm:text-sm">Let za
+                                gramofony</span>
+                        </div>
+                        <div
+                            class="bg-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-google-blue/50 relative z-10">
+                            <span
+                                class="block text-3xl sm:text-4xl md:text-5xl font-display font-black text-blue-gradient mb-1 sm:mb-2">30</span>
+                            <span class="text-white font-bold tracking-wide uppercase text-xs sm:text-sm">Let
+                                moderování</span>
+                        </div>
+                        <div
+                            class="bg-card p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl col-span-2 border border-white/5 hover:border-google-blue/50 relative z-10">
+                            <span
+                                class="block text-3xl sm:text-4xl md:text-5xl font-display font-black text-blue-gradient mb-1 sm:mb-2">100%</span>
+                            <span class="text-white font-bold tracking-wide uppercase text-xs sm:text-sm">Autentický
+                                Vinyl
+                                Zážitek</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="sluzby" class="py-12 sm:py-16 md:py-24 relative">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="text-center mb-10 sm:mb-16 md:mb-20 relative">
+                    <div class="aura-glow animate-aura w-[50%] h-[150%] opacity-40"></div>
+                    <h2
+                        class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-display font-black tracking-wider sm:tracking-widest uppercase mb-3 sm:mb-4 relative z-10">
+                        Vyberte si zážitek</h2>
+                    <p class="text-gray-400 relative z-10 text-sm sm:text-base">Profesionální přístup od malých oslav po
+                        velké eventy</p>
+                </div>
+
+                <div class="relative grid md:grid-cols-3 gap-6 items-end">
+
+                    <div class="aura-glow animate-aura w-[180%] h-[140%]"></div>
+
+                    <!-- Firemní Eventy -->
+                    <div
+                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition duration-300 flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px]">
+                        <div class="h-48 sm:h-56 relative overflow-hidden">
+                            <img src="img/event.jpg" alt="Firemní eventy" class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#141415] via-transparent to-transparent">
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl sm:text-3xl md:text-4xl font-display font-black mb-4 sm:mb-6 text-white leading-none">
+                                Firemní Eventy</h3>
+                            <p class="text-gray-400 mb-6 sm:mb-8 text-xs sm:text-sm leading-relaxed">Reprezentativní
+                                vystupování a atmosféra,
+                                která
+                                stmelí kolektiv a podpoří vaši značku.</p>
+                            <ul class="space-y-4 text-gray-300 text-sm mt-auto">
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-blue rounded-full mr-3"></span>Moderování akce</li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-blue rounded-full mr-3"></span>Hudební dramaturgie
+                                </li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-blue rounded-full mr-3"></span>Videoprojekce loga
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Oslavy & Párty -->
+                    <div
+                        class="bg-[#1e1e20] rounded-2xl sm:rounded-[2rem] relative flex flex-col shadow-2xl shadow-black border border-google-blue/40 z-10 overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[650px]">
+                        <div
+                            class="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-ai-gradient px-4 sm:px-6 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap z-20">
+                            <span
+                                class="text-white text-[10px] sm:text-xs font-black tracking-wider sm:tracking-widest uppercase">Populární
+                                volba</span>
+                        </div>
+                        <div class="h-48 sm:h-56 relative overflow-hidden">
+                            <img src="img/party.jpg" alt="Oslavy a párty" class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#1e1e20] via-transparent to-transparent">
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl sm:text-3xl md:text-4xl font-display font-black mb-4 sm:mb-6 text-white leading-none">
+                                Oslavy & Párty
+                            </h3>
+                            <p class="text-gray-300 mb-6 sm:mb-8 text-xs sm:text-sm leading-relaxed">Nezapomenutelná
+                                jízda v rytmu zlaté
+                                éry
+                                disca. Zábava pro všechny generace.</p>
+                            <ul class="space-y-4 text-white text-sm mt-auto">
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-white rounded-full mr-3"></span>Playlist na přání</li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-white rounded-full mr-3"></span>Světelná show</li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-white rounded-full mr-3"></span>Emoce a energie</li>
+                            </ul>
+                            <div class="mt-8 pt-8 border-t border-white/10">
+                                <a href="#kontakt"
+                                    class="block w-full py-3 bg-white text-black font-bold text-center rounded-full hover:bg-gray-200 transition uppercase tracking-wide text-sm">
+                                    Chci tuhle párty
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Svatby -->
+                    <div
+                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition duration-300 flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px]">
+                        <div class="h-48 sm:h-56 relative overflow-hidden">
+                            <img src="img/svatba.jpg" alt="Svatby" class="w-full h-full object-cover">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-[#141415] via-transparent to-transparent">
+                            </div>
+                        </div>
+                        <div class="p-5 sm:p-6 md:p-8 flex flex-col flex-grow">
+                            <h3
+                                class="text-2xl sm:text-3xl md:text-4xl font-display font-black mb-4 sm:mb-6 text-white leading-none">
+                                Svatby</h3>
+                            <p class="text-gray-400 mb-6 sm:mb-8 text-xs sm:text-sm leading-relaxed">Postarám se o
+                                skvělou atmosféru od prvního „Ano" až do rána.</p>
+                            <ul class="space-y-4 text-gray-300 text-sm mt-auto">
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-light rounded-full mr-3"></span>Hudba přesně podle
+                                    vás
+                                </li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-light rounded-full mr-3"></span>Moderování s
+                                    úsměvem</li>
+                                <li class="flex items-center"><span
+                                        class="w-1.5 h-1.5 bg-google-light rounded-full mr-3"></span>Vaše fotky na
+                                    velkém plátně
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section class="py-24 relative">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10">
+                <div class="relative">
+                    <div class="aura-glow animate-aura w-[120%] h-[120%]"></div>
+                    <div
+                        class="bg-card rounded-2xl sm:rounded-3xl border border-white/5 hover:border-google-blue/50 relative z-10 overflow-hidden">
+
+                        <!-- Video -->
+                        <div class="aspect-video relative">
+                            <video autoplay loop muted playsinline class="w-full h-full object-cover">
+                                <source src="img/dj_homepage.mp4" type="video/mp4">
+                            </video>
+                        </div>
+
+                        <!-- Text Content -->
+                        <div class="p-8 sm:p-10 md:p-14 text-center">
+                            <h2
+                                class="text-3xl sm:text-4xl font-display font-black tracking-wide mb-12 sm:mb-16 text-white">
+                                Analogová duše <br><span class="text-blue-gradient">v digitálním světě</span>
+                            </h2>
+                            <div class="grid sm:grid-cols-3 gap-8 text-left max-w-4xl mx-auto">
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2 tracking-wide uppercase">Originální
+                                        Vinyl</h4>
+                                    <p class="text-gray-400 text-sm">Používám originální gramofony Technics. Zvuk a
+                                        charakter, který digitál nenahradí.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2 tracking-wide uppercase">MC s
+                                        charismatem</h4>
+                                    <p class="text-gray-400 text-sm">Nejen DJ, ale i zkušený MC,<br
+                                            class="hidden sm:block"> který dokáže rozproudit zábavu<br
+                                            class="hidden sm:block"> a komunikovat s publikem.</p>
+                                </div>
+                                <div>
+                                    <h4 class="text-xl font-bold text-white mb-2 tracking-wide uppercase">Světla &
+                                        Projekce</h4>
+                                    <p class="text-gray-400 text-sm">Efektová, ambientní a autentická světla<br
+                                            class="hidden sm:block"> pro dokreslení atmosféry 80-90 let.<br
+                                            class="hidden sm:block"> Videoprojekce pro Vaše loga, prezentace nebo videa.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reference" class="py-12 sm:py-16 md:py-24 relative">
+            <div class="max-w-screen-xl mx-auto px-4 sm:px-6 text-center relative z-10">
+                <h2
+                    class="text-2xl sm:text-3xl font-display font-black tracking-wider sm:tracking-widest uppercase mb-8 sm:mb-12 md:mb-16 text-white">
+                    Řekli o mně</h2>
+
+                <div class="relative grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8">
+
+                    <div class="aura-glow animate-aura w-[150%] h-[150%] opacity-60"></div>
+
+                    <blockquote
+                        class="bg-card p-8 rounded-2xl border border-white/5 hover:border-google-blue/30 transition relative z-10">
+                        <p class="text-gray-300 italic mb-6 text-sm">"Tomáš byl naprosto skvělý! Dokonale odhadl
+                            atmosféru,
+                            hrál skvělou hudbu pro všechny generace."</p>
+                        <footer class="font-bold text-white tracking-wide uppercase text-xs">— Petra & Martin</footer>
+                    </blockquote>
+                    <blockquote
+                        class="bg-card p-8 rounded-2xl border border-white/5 hover:border-google-blue/30 transition relative z-10">
+                        <p class="text-gray-300 italic mb-6 text-sm">"Oceňujeme profesionalitu a schopnost vytvořit
+                            atmosféru přesně dle našich potřeb."</p>
+                        <footer class="font-bold text-white tracking-wide uppercase text-xs">— Jana Nováková, HR
+                        </footer>
+                    </blockquote>
+                    <blockquote
+                        class="bg-card p-8 rounded-2xl border border-white/5 hover:border-google-blue/30 transition relative z-10">
+                        <p class="text-gray-300 italic mb-6 text-sm">"Ta nejlepší párty, jakou jsem zažil. Hrál jeden
+                            hit za
+                            druhým."</p>
+                        <footer class="font-bold text-white tracking-wide uppercase text-xs">— Lukáš Dvořák</footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section id="kontakt" class="py-16 sm:py-24 md:py-32 text-center bg-black relative overflow-hidden">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-google-blue/20 to-transparent pointer-events-none"
+                style="mask-image: linear-gradient(to top, black, transparent);"></div>
+
+            <div
+                class="aura-glow animate-aura w-[300px] sm:w-[400px] md:w-[600px] h-[300px] sm:h-[400px] md:h-[600px] top-[60%] opacity-60">
+            </div>
+
+            <div class="max-w-2xl mx-auto px-4 sm:px-6 relative z-10">
+                <h2
+                    class="text-3xl sm:text-4xl md:text-5xl font-display font-black tracking-wider sm:tracking-widest uppercase mb-4 sm:mb-6 text-white">
+                    Máte termín?</h2>
+                <p class="text-base sm:text-lg md:text-xl text-gray-400 mb-6 sm:mb-8 md:mb-10">
+                    Termíny se rychle plní.<br class="hidden sm:block">
+                    Spojme se a vytvořme nezapomenutelnou akci.
+                </p>
+
+                <a href="mailto:info@djneverending.cz"
+                    class="inline-block py-3 sm:py-4 px-8 sm:px-10 md:px-12 text-sm sm:text-base md:text-lg font-bold text-white rounded-full bg-ai-gradient hover:shadow-[0_0_30px_rgba(66,133,244,0.6)] transition transform hover:scale-105 tracking-wider sm:tracking-widest uppercase relative z-20">
+                    Odeslat poptávku
+                </a>
+
+                <div class="mt-16 pt-8 border-t border-white/10 text-gray-600 text-xs tracking-widest uppercase">
+                    <p>&copy; 2026 DJ Neverending.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</body>
+
+</html>
