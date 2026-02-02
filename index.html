@@ -233,6 +233,30 @@
                     });
                 });
             }
+
+            // Cards animation on scroll
+            const cardsContainer = document.getElementById('cards-container');
+            const cardLeft = document.getElementById('card-left');
+            const cardRight = document.getElementById('card-right');
+
+            if (cardsContainer && cardLeft && cardRight) {
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            // Animate cards out from center
+                            cardLeft.classList.remove('md:translate-x-[calc(100%+1.5rem)]', 'md:opacity-0');
+                            cardLeft.classList.add('md:translate-x-0', 'md:opacity-100');
+                            cardRight.classList.remove('md:-translate-x-[calc(100%+1.5rem)]', 'md:opacity-0');
+                            cardRight.classList.add('md:translate-x-0', 'md:opacity-100');
+                        }
+                    });
+                }, {
+                    threshold: 0.8,
+                    rootMargin: '0px'
+                });
+
+                observer.observe(cardsContainer);
+            }
         });
     </script>
 
@@ -295,13 +319,13 @@
                         velké eventy</p>
                 </div>
 
-                <div class="relative grid md:grid-cols-3 gap-6 items-end">
+                <div id="cards-container" class="relative grid md:grid-cols-3 gap-6 items-end">
 
                     <div class="aura-glow animate-aura w-[180%] h-[140%]"></div>
 
                     <!-- Firemní Eventy -->
-                    <div
-                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition duration-300 flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px]">
+                    <div id="card-left"
+                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition-all duration-[2000ms] ease-out flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px] md:translate-x-[calc(100%+1.5rem)] md:opacity-0">
                         <div class="h-48 sm:h-56 relative overflow-hidden">
                             <img src="img/event.jpg" alt="Firemní eventy" class="w-full h-full object-cover">
                             <div
@@ -330,8 +354,8 @@
                     </div>
 
                     <!-- Oslavy & Párty -->
-                    <div
-                        class="bg-[#1e1e20] rounded-2xl sm:rounded-[2rem] relative flex flex-col shadow-2xl shadow-black border border-google-blue/40 z-10 overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[650px]">
+                    <div id="card-center"
+                        class="bg-[#1e1e20] rounded-2xl sm:rounded-[2rem] relative flex flex-col shadow-2xl shadow-black border border-google-blue/40 z-20 overflow-hidden min-h-[560px] sm:min-h-[620px] md:min-h-[650px]">
                         <div
                             class="absolute top-4 sm:top-6 left-1/2 -translate-x-1/2 bg-ai-gradient px-4 sm:px-6 py-1 sm:py-1.5 rounded-full shadow-lg whitespace-nowrap z-20">
                             <span
@@ -371,8 +395,8 @@
                     </div>
 
                     <!-- Svatby -->
-                    <div
-                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition duration-300 flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px]">
+                    <div id="card-right"
+                        class="bg-card rounded-2xl sm:rounded-[2rem] hover:bg-[#1a1a1c] transition-all duration-[2000ms] ease-out flex flex-col border border-white/5 relative z-10 overflow-hidden min-h-[500px] sm:min-h-[550px] md:min-h-[580px] md:-translate-x-[calc(100%+1.5rem)] md:opacity-0">
                         <div class="h-48 sm:h-56 relative overflow-hidden">
                             <img src="img/svatba.jpg" alt="Svatby" class="w-full h-full object-cover">
                             <div
