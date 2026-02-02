@@ -133,7 +133,7 @@
         }
 
         .fluid-pt-header {
-            padding-top: clamp(6rem, 12vw, 8rem);
+            padding-top: clamp(9rem, 20vw, 14rem);
         }
     </style>
 </head>
@@ -206,11 +206,9 @@
     </nav>
 
     <!-- HERO SEKCE (Kompaktní) -->
-    <section class="relative h-[60vh] min-h-[400px] flex items-center justify-center fluid-pt-header overflow-hidden">
-        <!-- Background Image -->
-        <div class="absolute inset-0 z-0">
-            <img src="img/hero-bg.jpg" alt="Hero pozadí" class="w-full h-full object-cover">
-        </div>
+    <section
+        class="relative min-h-[50vh] flex items-center justify-center pt-32 sm:pt-28 pb-16 sm:pb-20 overflow-hidden">
+
 
         <!-- Dark Overlay -->
         <div class="absolute inset-0 bg-black/70 z-0"></div>
@@ -220,8 +218,9 @@
             <div class="relative inline-block">
                 <div class="aura-glow animate-aura w-[120%] h-[120%] opacity-50"></div>
                 <h1
-                    class="relative z-10 mb-4 sm:mb-6 font-display font-black tracking-wide leading-tight text-white fluid-hero-subtitle">
-                    <span class="text-blue-gradient block fluid-hero-title mb-4 tracking-wider leading-none">Kompletní
+                    class="relative z-10 mb-4 sm:mb-6 font-display font-black tracking-wide leading-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
+                    <span
+                        class="text-blue-gradient block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 tracking-wider leading-none">Kompletní
                         produkce</span>
                     pro vaši akci
                 </h1>
