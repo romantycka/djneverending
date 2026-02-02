@@ -42,10 +42,31 @@
     </script>
 
     <style>
+        /* Global mobile fixes */
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
         body {
             background-color: #000000;
             color: #ffffff;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Fix white line under images/videos */
+        img,
+        video {
+            display: block;
+        }
+
+        /* Ensure all sections have black background */
+        section {
+            background-color: #000000;
         }
 
         .text-blue-gradient {

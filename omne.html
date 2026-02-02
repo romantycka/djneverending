@@ -42,10 +42,31 @@
     </script>
 
     <style>
+        /* Global mobile fixes */
+        html {
+            overflow-x: hidden;
+            width: 100%;
+            position: relative;
+        }
+
         body {
             background-color: #000000;
             color: #ffffff;
             overflow-x: hidden;
+            width: 100%;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        /* Fix white line under images/videos */
+        img,
+        video {
+            display: block;
+        }
+
+        /* Ensure all sections have black background */
+        section {
+            background-color: #000000;
         }
 
         .text-blue-gradient {
@@ -176,7 +197,7 @@
                     class="relative z-10 mb-4 sm:mb-6 font-display font-black tracking-wide leading-tight text-white text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
                     <span
                         class="text-blue-gradient block text-4xl sm:text-5xl md:text-6xl lg:text-7xl mb-4 tracking-wider leading-tight pb-2">Více
-                        než jen pouštěč hudby</span>
+                        než jen<br class="sm:hidden"> pouštěč hudby</span>
                 </h1>
             </div>
 
@@ -231,9 +252,9 @@
                     <div class="relative flex">
                         <div class="aura-glow animate-aura w-[130%] h-[130%]"></div>
                         <div
-                            class="bg-card p-2 rounded-3xl border border-white/5 hover:border-google-blue/50 relative z-10 shadow-2xl w-full h-full">
+                            class="bg-card rounded-3xl border border-white/5 hover:border-google-blue/50 relative z-10 shadow-2xl w-full h-full overflow-hidden">
                             <img src="img/dj.jpg" alt="Pavel - DJ Neverending"
-                                class="w-full h-full object-cover rounded-2xl hover:scale-[1.02] transition duration-700">
+                                class="w-full h-full object-cover hover:scale-[1.02] transition duration-700">
                         </div>
                     </div>
                 </div>
