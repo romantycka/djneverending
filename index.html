@@ -178,8 +178,9 @@
         </div>
     </nav>
 
+    <!-- Fixed Hero Background -->
     <section
-        class="sticky top-0 min-h-[70vh] sm:h-screen flex items-center justify-center pt-20 relative overflow-hidden">
+        class="fixed top-0 left-0 right-0 z-0 min-h-[70vh] sm:h-screen flex items-center justify-center pt-20 overflow-hidden">
         <!-- Fallback Image (shows before video loads or if video disabled) -->
         <img src="img/hero-bg.jpg" alt="Hero pozadí" class="absolute inset-0 w-full h-full object-cover z-0">
 
@@ -227,6 +228,9 @@
             </div>
         </div>
     </section>
+
+    <!-- Spacer to push content below fixed hero -->
+    <div class="min-h-[70vh] sm:h-screen"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
