@@ -207,7 +207,7 @@
 
     <!-- Fixed Hero Background -->
     <section
-        class="fixed top-0 left-0 right-0 z-0 min-h-[70vh] sm:h-screen flex items-start justify-center pt-32 sm:pt-40 md:pt-48 overflow-hidden">
+        class="relative sm:fixed top-0 left-0 right-0 z-0 h-auto min-h-[100svh] sm:h-screen flex items-start justify-center pt-32 sm:pt-40 md:pt-48 overflow-hidden">
         <!-- Fallback Image (shows before video loads or if video disabled) -->
         <img src="img/hero-bg.jpg" alt="Hero pozadí" class="absolute inset-0 w-full h-full object-cover z-0">
 
@@ -221,25 +221,28 @@
 
         <!-- Content Wrapper - starts hidden/up, slides down -->
         <div id="hero-content"
-            class="relative z-10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 opacity-0 -translate-y-20 transition-all duration-[1500ms] ease-out">
+            class="relative z-10 py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-16 lg:px-12 pb-32 opacity-0 -translate-y-20 transition-all duration-[1500ms] ease-out">
 
             <div class="relative inline-block">
                 <div class="aura-glow animate-aura w-[115%] h-[115%] opacity-80 z-[2]"></div>
                 <h1
                     class="relative z-10 mb-4 sm:mb-8 font-display font-black tracking-wide leading-tight text-white uppercase fluid-hero-subtitle">
                     <span
-                        class="text-blue-gradient block fluid-hero-title mb-4 sm:mb-8 tracking-wider sm:tracking-widest leading-none">DJ
+                        class="text-white block fluid-hero-title mb-2 sm:mb-4 tracking-wider sm:tracking-widest leading-none">DJ
                         NEVERENDING</span>
-                    Pravý zvuk <br>
-                    <span class="text-gray-400 fluid-hero-small block mt-2 sm:mt-4">80. a 90.
+                    <span class="block text-2xl sm:text-3xl md:text-4xl mb-2">Pravý zvuk</span>
+                    <span
+                        class="text-blue-gradient fluid-hero-title block leading-[0.9] font-black tracking-tighter">80.
+                        a 90.
                         let</span>
                 </h1>
             </div>
 
             <p
                 class="mb-6 sm:mb-10 text-base sm:text-lg font-normal text-gray-300 lg:text-xl px-2 sm:px-16 xl:px-48 max-w-4xl mx-auto leading-relaxed relative z-10">
-                Autentický vinyl, charisma zkušeného MC a produkce na klíč.
-                Vraťte se v čase s elegancí a stylem, který digitál nenahradí.
+                Autentický vinyl, charisma zkušeného MC a produkce na klíč. Chcete se zvukem, světly i atmosférou
+                přenést do 80. a 90. let? Umím to dokonale. Vraťte se v čase s elegancí a stylem, který digitál
+                nenahradí.
             </p>
 
             <div
@@ -256,8 +259,8 @@
         </div>
     </section>
 
-    <!-- Spacer to push content below fixed hero -->
-    <div class="min-h-[70vh] sm:h-screen"></div>
+    <!-- Spacer to push content below fixed hero (hidden on mobile where hero is relative) -->
+    <div class="hidden sm:block min-h-[70vh] sm:h-screen"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -312,7 +315,7 @@
         });
     </script>
 
-    <div class="relative z-20 bg-page">
+    <div class="relative z-20 bg-page -mt-4 sm:-mt-12 md:-mt-16">
         <section id="omne" class="py-12 sm:py-16 md:py-24 relative scroll-mt-20">
             <div class="max-w-screen-xl mx-auto px-4 sm:px-6 relative z-10">
                 <div class="grid md:grid-cols-2 gap-8 md:gap-16 items-center">
@@ -554,7 +557,7 @@
 
                     <blockquote
                         class="bg-card p-8 rounded-2xl border border-white/5 hover:border-google-blue/30 transition relative z-10 flex flex-col">
-                        <p class="text-gray-300 italic mb-6 text-sm flex-grow">"Tomáš byl naprosto skvělý! Dokonale
+                        <p class="text-gray-300 italic mb-6 text-sm flex-grow">"Pavel byl naprosto skvělý! Dokonale
                             odhadl
                             atmosféru,
                             hrál skvělou hudbu pro všechny generace."</p>
